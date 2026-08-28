@@ -3,9 +3,11 @@
 A personal UI playground and component library for collecting, crafting, and refining beautiful interfaces.
 
 ## About
+
 PixelForge is a curated collection of React components, interactive patterns, and UI experiments. It serves as an active workspace for testing animations, building accessibility-first components, and organizing design inspiration into a reusable library.
 
 ## Goals
+
 - **Collect**: Gather beautiful UI patterns and inspiration from the web.
 - **Experiment**: Prototype new layouts, animations, and micro-interactions.
 - **Refine**: Polish components for accessibility, responsiveness, and dark mode support.
@@ -13,6 +15,7 @@ PixelForge is a curated collection of React components, interactive patterns, an
 - **Reuse**: Provide a stable foundation for exporting and reusing components across other projects.
 
 ## Tech Stack
+
 - **React** (v19)
 - **TypeScript** (Strict)
 - **Vite** (Build & Dev)
@@ -22,6 +25,7 @@ PixelForge is a curated collection of React components, interactive patterns, an
 - **Vitest** (Unit Testing)
 
 ## Repository Structure
+
 - `components/` - Stable, independent, reusable UI components (e.g., Buttons, Cards).
 - `patterns/` - Compositions of components (e.g., Dashboards, Authentication).
 - `experimental/` - Early-stage prototypes and motion experiments.
@@ -34,21 +38,25 @@ PixelForge is a curated collection of React components, interactive patterns, an
 ## Development
 
 Install dependencies:
+
 ```bash
 npm install
 ```
 
 Start the Vite development server:
+
 ```bash
 npm run dev
 ```
 
 Start the Storybook visual testing environment:
+
 ```bash
 npm run storybook
 ```
 
 Run tests and checks:
+
 ```bash
 npm run test          # Run Vitest
 npm run lint          # Run ESLint
@@ -57,12 +65,15 @@ npm run format:check  # Check Prettier formatting
 ```
 
 Build the library:
+
 ```bash
 npm run build
 ```
 
 ## Component Philosophy
+
 Components are built to be:
+
 - **Independently renderable**: Do not rely on global app state.
 - **Portable**: Easily imported into other projects.
 - **Accessible**: Built with semantic HTML and appropriate ARIA roles.
@@ -72,7 +83,9 @@ Components are built to be:
 - **Tested**: Verified with unit and behavior tests where meaningful.
 
 ## Inspiration & Attribution
+
 When building components inspired by the community, attributions are tracked in the `inspiration/` folder and noted in the component's README. See `inspiration/README.md` for our approach to external code and design references.
 
 ## Status
+
 🚧 **Actively Evolving** - PixelForge is a personal, living repository. Components are frequently refactored and APIs may change without warning.

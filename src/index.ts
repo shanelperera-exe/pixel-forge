@@ -1,6 +1,4 @@
 import './index.css';
 
-export * from './components/buttons/Button';
-export * from './components/cards/Card';
-export * from './components/feedback/Badge';
+export * from './components/animations/PlatformInfrastructureHero';
 export * from './lib/utils';

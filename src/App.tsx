@@ -12,7 +12,8 @@ function App() {
             PixelForge
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            A personal UI playground and component library. Run <code>npm run storybook</code> for the main visual environment.
+            A personal UI playground and component library. Run{' '}
+            <code>npm run storybook</code> for the main visual environment.
           </p>
         </div>
 
