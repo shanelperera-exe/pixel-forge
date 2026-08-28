@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import lottie from 'lottie-web';
+import type { AnimationItem } from 'lottie-web';
 
 import desktopLottie from './assets/home-hero-desktop-71d8ee09850a.json';
 import tabletLottie from './assets/home-hero-tablet-35ad653e35a7.json';
@@ -13,7 +14,7 @@ export const PlatformInfrastructureHero: React.FC<
   PlatformInfrastructureHeroProps
 > = ({ className = '' }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const animationInstance = useRef<any>(null);
+  const animationInstance = useRef<AnimationItem | null>(null);
 
   const getLottieData = (width: number) => {
     if (width > 1024) return desktopLottie;
@@ -26,7 +27,7 @@ export const PlatformInfrastructureHero: React.FC<
 
     let currentData = getLottieData(window.innerWidth);
 
-    const loadAnimation = (animationData: any) => {
+    const loadAnimation = (animationData: unknown) => {
       if (animationInstance.current) {
         animationInstance.current.destroy();
       }
