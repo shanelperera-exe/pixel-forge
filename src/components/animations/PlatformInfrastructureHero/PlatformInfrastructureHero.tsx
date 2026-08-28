@@ -2,9 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import lottie from 'lottie-web';
 import type { AnimationItem } from 'lottie-web';
 
-import desktopLottie from './assets/home-hero-desktop-71d8ee09850a.json';
-import tabletLottie from './assets/home-hero-tablet-35ad653e35a7.json';
-import mobileLottie from './assets/home-hero-mobile-9d2f4330c1fd.json';
 
 export interface PlatformInfrastructureHeroProps {
   className?: string;
@@ -16,18 +13,18 @@ export const PlatformInfrastructureHero: React.FC<
   const containerRef = useRef<HTMLDivElement>(null);
   const animationInstance = useRef<AnimationItem | null>(null);
 
-  const getLottieData = (width: number) => {
-    if (width > 1024) return desktopLottie;
-    if (width > 768) return tabletLottie;
-    return mobileLottie;
+  const getLottiePath = (width: number) => {
+    if (width > 1024) return '/lottie/platform-infrastructure-hero/desktop.json';
+    if (width > 768) return '/lottie/platform-infrastructure-hero/tablet.json';
+    return '/lottie/platform-infrastructure-hero/mobile.json';
   };
 
   useEffect(() => {
     if (!containerRef.current) return;
 
-    let currentData = getLottieData(window.innerWidth);
+    let currentPath = getLottiePath(window.innerWidth);
 
-    const loadAnimation = (animationData: unknown) => {
+    const loadAnimation = (path: string) => {
       if (animationInstance.current) {
         animationInstance.current.destroy();
       }
@@ -37,17 +34,17 @@ export const PlatformInfrastructureHero: React.FC<
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        animationData: animationData,
+        path: path,
       });
     };
 
-    loadAnimation(currentData);
+    loadAnimation(currentPath);
 
     const handleResize = () => {
-      const newData = getLottieData(window.innerWidth);
-      if (newData !== currentData) {
-        currentData = newData;
-        loadAnimation(currentData);
+      const newPath = getLottiePath(window.innerWidth);
+      if (newPath !== currentPath) {
+        currentPath = newPath;
+        loadAnimation(currentPath);
       }
     };
 
